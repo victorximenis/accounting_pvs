@@ -1,0 +1,18 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: accounting_pvs_development
+
+test:
+  <<: *default
+  database: accounting_pvs_test
+
+production:
+  <<: *default
+  database: accounting_pvs_production
+  username: accounting_pvs
+  password: <%= ENV['ACCOUNTING_PVS_DATABASE_PASSWORD'] %>
