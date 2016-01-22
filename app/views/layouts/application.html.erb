@@ -1,14 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>AccountingPvs</title>
+  <title>Accounting PVS</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<%= render 'layouts/navbar' %>
+
+<div class="ui container main-container">
+  <div class="ui grid">
+    <div class="sixteen wide column">
+      <% if alert.present? %>
+        <div class="ui negative message">
+          <i class="close icon"></i>
+          <div class="header">
+            <%= alert %>
+          </div>
+        </div>
+      <% end %>
+
+      <% if notice.present? %>
+        <div class="ui positive message">
+          <i class="close icon"></i>
+          <div class="header">
+            <%= notice %>
+          </div>
+        </div>
+      <% end %>
+      <%= yield %>
+    </div>
+  </div>
+</div>
 
 </body>
 </html>

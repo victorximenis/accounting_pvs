@@ -1,0 +1,16 @@
+<div class="ui top fixed large menu">
+  <div class="item">
+    <img src="/protocol-icon.png">
+  </div>
+  <% if user_signed_in? %>
+  <%= link_to 'Início', root_path, class: 'item' %>
+  <% end %>
+  <div class="right menu">
+    <% if user_signed_in? %>
+    <div class="item">
+      <%= current_user.name %>
+    </div>
+    <%= link_to "Sair", destroy_user_session_path, :method => :delete, class: 'item' %>
+    <% end %>
+  </div>
+</div>
