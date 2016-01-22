@@ -18,6 +18,7 @@ class ProtocolsController < ApplicationController
 
   def create
     @protocol = Protocol.new(protocol_params)
+    @protocol.user = current_user
     if @protocol.save
       redirect_to @protocol, notice: "Protocolo salvo com sucesso!"
     else

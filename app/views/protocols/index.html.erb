@@ -4,7 +4,8 @@
     <tr>
       <th>Data</th>
       <th>Protocolo</th>
-      <th></th>
+      <th>Colaborador</th>
+      <th>Status</th>
     </tr>
   </thead>
   <tbody>
@@ -12,7 +13,13 @@
     <tr>
       <td><%= protocol.created_at.strftime("%d/%m/%Y %H:%M:%S") %></td>
       <td><%= link_to protocol.title, protocol %></td>
+      <td><%= protocol.user.name %></td>
       <td>
+        <% if protocol.approved %>
+        <div class="ui green horizontal label"><i class="checkmark icon"></i> Aprovado</div>
+        <% else %>
+        <div class="ui orange horizontal label"><i class="wait icon"></i> Em Análise</div>
+        <% end %>
       </td>
     </tr>
     <% end %>
