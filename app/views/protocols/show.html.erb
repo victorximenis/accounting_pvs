@@ -1,0 +1,28 @@
+<div class="ui items">
+  <div class="item">
+    <div class="ui small image">
+      <img src="/protocol-image.jpg">
+    </div>
+    <div class="middle aligned content">
+      <div class="header">
+        <%= @protocol.title %>
+      </div>
+      <div class="description">
+        <p><%= @protocol.description %></p>
+      </div>
+      <div class="extra">
+        <a href="/" class="ui animated button blue" tabindex="0">
+          <div class="hidden content">Baixar</div>
+          <div class="visible content">
+            <i class="download icon"></i>
+          </div>
+        </a>
+        <% if current_user.is_root %>
+        <a class="ui right floated button green">
+          <i class="checkmark icon"></i> Aprovar
+        </a>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

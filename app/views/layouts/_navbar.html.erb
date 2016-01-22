@@ -4,6 +4,7 @@
   </div>
   <% if user_signed_in? %>
   <%= link_to 'Início', root_path, class: 'item' %>
+  <%= link_to 'Protocolos', protocols_path, class: 'item' %>
   <% end %>
   <div class="right menu">
     <% if user_signed_in? %>

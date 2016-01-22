@@ -1,0 +1,20 @@
+<%= link_to raw("<i class='add square icon'></i> Adicionar"), new_protocol_path, class: 'ui primary button' %>
+<table class="ui single line table">
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>Protocolo</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @protocols.each do |protocol| %>
+    <tr>
+      <td><%= protocol.created_at.strftime("%d/%m/%Y %H:%M:%S") %></td>
+      <td><%= link_to protocol.title, protocol %></td>
+      <td>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

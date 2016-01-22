@@ -16,6 +16,13 @@
       </div>
 
       <div class="field">
+        <div class="ui checkbox">
+          <%= f.check_box :is_root, tabindex: 0, class: 'hidden' %>
+          <%= f.label :is_root %>
+        </div>
+      </div>
+
+      <div class="field">
         <%= f.label :password %>
         <% if @minimum_password_length %>
         <em>(<%= @minimum_password_length %> characters minimum)</em>
