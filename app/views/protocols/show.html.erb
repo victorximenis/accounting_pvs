@@ -12,6 +12,11 @@
       </div>
       <div class="description">
         <p><%= @protocol.description %></p>
+        <% if @protocol.approved %>
+          <div class="ui green horizontal label"><i class="checkmark icon"></i> Aprovado por <%= @protocol.approval_info.user.name %></div>
+        <% else %>
+          <div class="ui orange horizontal label"><i class="wait icon"></i> Em Análise</div>
+        <% end %>
       </div>
       <div class="extra">
 
@@ -20,7 +25,7 @@
           <i class='download icon'></i>
         </div>"), @protocol.protocol_attachment.url, class: 'ui animated button blue', tabindex: '0', target: 'blank' %>
 
-        <% if current_user.is_root %>
+        <% if current_user.is_root && !@protocol.approved %>
         <%= link_to raw("<i class='checkmark icon'></i> Aprovar"), approve_protocol_path(@protocol), class: 'ui right floated button green' %>
         <!-- <a class="ui right floated button green">
           <i class="checkmark icon"></i> Aprovar
