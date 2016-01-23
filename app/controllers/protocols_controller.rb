@@ -1,4 +1,5 @@
 class ProtocolsController < ApplicationController
+  before_action :authenticate_user!
 
   def index
     @protocols = Protocol.all
@@ -47,7 +48,7 @@ class ProtocolsController < ApplicationController
   private
 
   def protocol_params
-    params.require(:protocol).permit(:title, :description, :approved)
+    params.require(:protocol).permit(:title, :description, :approved, :protocol_attachment)
   end
 
 end

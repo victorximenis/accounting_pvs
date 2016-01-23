@@ -14,12 +14,12 @@
         <p><%= @protocol.description %></p>
       </div>
       <div class="extra">
-        <a href="/" class="ui animated button blue" tabindex="0">
-          <div class="hidden content">Baixar</div>
-          <div class="visible content">
-            <i class="download icon"></i>
-          </div>
-        </a>
+
+        <%= link_to raw("<div class='hidden content'>Baixar</div>
+        <div class='visible content'>
+          <i class='download icon'></i>
+        </div>"), @protocol.protocol_attachment.url, class: 'ui animated button blue', tabindex: '0', target: 'blank' %>
+
         <% if current_user.is_root %>
         <a class="ui right floated button green">
           <i class="checkmark icon"></i> Aprovar

@@ -14,6 +14,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'puma'
 gem 'semantic-ui-sass', github: 'doabit/semantic-ui-sass'
 gem 'devise'
+gem 'carrierwave'
 
 group :production do
   gem 'rails_12factor'
