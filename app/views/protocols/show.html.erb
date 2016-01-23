@@ -21,9 +21,10 @@
         </div>"), @protocol.protocol_attachment.url, class: 'ui animated button blue', tabindex: '0', target: 'blank' %>
 
         <% if current_user.is_root %>
-        <a class="ui right floated button green">
+        <%= link_to raw("<i class='checkmark icon'></i> Aprovar"), approve_protocol_path(@protocol), class: 'ui right floated button green' %>
+        <!-- <a class="ui right floated button green">
           <i class="checkmark icon"></i> Aprovar
-        </a>
+        </a> -->
         <% end %>
       </div>
     </div>

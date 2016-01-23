@@ -17,6 +17,15 @@ class ProtocolsController < ApplicationController
     @protocol = Protocol.find(params[:id])
   end
 
+  def approve_protocol
+    @protocol = Protocol.find(params[:id])
+    if @protocol.update({approved: true})
+      redirect_to protocols_path, notice: "Protocolo aprovado com sucesso!"
+    else
+      redirect_to protocols_path, alert: "Não foi possível aprovar o protocolo!"
+    end
+  end
+
   def create
     @protocol = Protocol.new(protocol_params)
     @protocol.user = current_user

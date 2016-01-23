@@ -4,4 +4,6 @@ Rails.application.routes.draw do
 
   resources :protocols
 
+  get '/protocols/:id/approve', to: 'protocols#approve_protocol', as: 'approve_protocol'
+
 end
