@@ -2,7 +2,7 @@ class ProtocolsController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @protocols = Protocol.all
+    @protocols = Protocol.order(created_at: :desc)
   end
 
   def new
